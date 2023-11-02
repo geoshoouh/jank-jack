@@ -14,8 +14,5 @@ public class JankJackGame {
     init() {
         
         self.deck = VegasDeck();
-        
-        playerScore = 0;
-        dealerScore = 0;
     }
 }
