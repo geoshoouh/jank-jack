@@ -20,12 +20,12 @@ public class Participant {
         self.score = handleAce(hitValue: deck.drawCard());
     }
     
-    private func handleAce(hitValue: Int) -> Int {
+    internal func handleAce(hitValue: Int) -> Int {
         
         var retVal: Int = self.score + hitValue;
         
-        if hitValue == 1 && retVal > 21 {
-            retVal -= 10;
+        if hitValue == 1 && retVal + 10 <= 21 {
+            retVal += 10
         }
         
         return retVal;

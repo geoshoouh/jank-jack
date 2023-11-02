@@ -22,9 +22,16 @@ class ParticipantTests: XCTestCase {
         self.deck = VegasDeck();
     }
     
-    func testHitWorksInAccordanceWithBlackJack() throws {
+    func testParticipantKeepsAceAtOneIfOtherwiseBust() throws {
         
+        self.participant.score = 20;
         
+        XCTAssertEqual(self.participant.handleAce(hitValue: 1), 21);
+    }
+    
+    func testParticipantBoostsAceIfWontBust() throws {
+        
+        XCTAssertEqual(self.participant.handleAce(hitValue: 1), 11);
     }
     
 }
