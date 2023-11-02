@@ -10,8 +10,6 @@ import Foundation
 public class JankJackGame {
     
     private var deck: VegasDeck;
-    private var playerScore: Int;
-    private var dealerScore: Int;
     
     init() {
         
