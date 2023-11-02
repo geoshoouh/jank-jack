@@ -9,13 +9,13 @@ import Foundation
 
 public class JankJackGame {
     
-    private var deck: DeckOfCards;
+    private var deck: VegasDeck;
     private var playerScore: Int;
     private var dealerScore: Int;
     
     init() {
         
-        self.deck = DeckOfCards();
+        self.deck = VegasDeck();
         
         playerScore = 0;
         dealerScore = 0;

@@ -10,18 +10,20 @@ import XCTest
 
 class DeckTests: XCTestCase {
     
-    var deck: DeckOfCards!;
+    private var deck: VegasDeck!;
     
     override func setUp() {
+        
         super.setUp();
-        deck = DeckOfCards();
+        deck = VegasDeck();
     }
     
-    func testGameInitsFiftyTwoCardDeck() throws {
+    func testDeckInitsFiftyTwoCardDeck() throws {
+        
         XCTAssertEqual(self.deck.getDeck().count, 52);
     }
     
-    func testGameDrawsCardsAsExpected() throws {
+    func testDeckDrawsCardsAsExpected() throws {
         
         for _ in 0..<52 {
             let deckCountBeforeDraw: Int = deck.getDeck().count;
@@ -30,6 +32,6 @@ class DeckTests: XCTestCase {
             XCTAssertEqual(deck.getDeck().count, deckCountBeforeDraw - 1);
         }
         
-        XCTAssertEqual(deck.drawCard(), -1);
+        XCTAssertNotEqual(deck.drawCard(), -1);
     }
 }

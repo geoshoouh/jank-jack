@@ -8,7 +8,7 @@
 import Foundation
 
 
-public class DeckOfCards {
+public class VegasDeck {
     
     private var cards: [Int];
     
@@ -26,13 +26,28 @@ public class DeckOfCards {
     
     public func drawCard() -> Int {
         
-        var retVal: Int = -1;
+        var retVal: Int;
         
         if self.cards.count > 0 {
             let randomIndex: Int = Int.random(in: 0..<self.cards.count);
             retVal = removeAndReturnRandomCard(cardIndex: randomIndex);
+        } else {
+            let replenishResult: Bool = replenishDeck();
+            retVal = replenishResult ? drawCard() : -1;
         }
 
+        return retVal;
+    }
+    
+    private func replenishDeck() -> Bool {
+        
+        var retVal: Bool = false;
+        
+        if self.cards.count < 1 {
+            makeDeck();
+            retVal = true;
+        }
+        
         return retVal;
     }
     
