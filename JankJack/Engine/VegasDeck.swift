@@ -65,14 +65,14 @@ public class VegasDeck {
     
     private func makeDeck() -> Void {
         
-        for i in 0..<9 {
-            for _ in 1..<5 {
+        for i in 1..<10 {
+            for _ in 0..<4 {
                 self.cards.append(i);
             }
         }
         
         for _ in 0..<16 {
-            self.cards.append(16);
+            self.cards.append(10);
         }
     }
 }
