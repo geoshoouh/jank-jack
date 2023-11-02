@@ -16,4 +16,11 @@ class GameTests: XCTestCase {
         super.setUp()
         game = JankJackGame();
     }
+    
+    func testGameStartedProperly() throws {
+        
+        self.game.beginGame();
+        XCTAssertTrue(self.game.getDealerScore() > 0);
+        XCTAssertTrue(self.game.getPlayerScore() > 0);
+    }
 }

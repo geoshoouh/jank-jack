@@ -20,8 +20,26 @@ public class JankJackGame {
         self.deck = VegasDeck();
     }
     
-    private func issueMoneyToPlayer(amount: Int) -> Void {
+    public func beginGame() -> Void {
         
-        player.giveMoney(amount: amount);
+        self.player.giveMoney(amount: 100);
+        
+        deal();
+    }
+    
+    public func getDealerScore() -> Int {
+        return self.dealer.score;
+    }
+    
+    public func getPlayerScore() -> Int {
+        return self.player.score;
+    }
+    
+    private func deal() -> Void {
+        
+        for _ in 0..<2 {
+            player.hit(deck: self.deck);
+            dealer.hit(deck: self.deck);
+        }
     }
 }

@@ -15,7 +15,7 @@ public class Participant {
         self.score = 0;
     }
     
-    func hit(deck: VegasDeck) -> Void {
+    public func hit(deck: VegasDeck) -> Void {
         
         self.score = handleAce(hitValue: deck.drawCard());
     }
@@ -29,5 +29,9 @@ public class Participant {
         }
         
         return retVal;
+    }
+    
+    private func setScore(value: Int) -> Void {
+        self.score = value;
     }
 }
