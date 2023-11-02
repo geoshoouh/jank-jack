@@ -19,4 +19,9 @@ public class JankJackGame {
         self.player = Player();
         self.deck = VegasDeck();
     }
+    
+    private func issueMoneyToPlayer(amount: Int) -> Void {
+        
+        player.giveMoney(amount: amount);
+    }
 }

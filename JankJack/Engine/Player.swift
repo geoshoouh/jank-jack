@@ -10,12 +10,10 @@ import Foundation
 public class Player: Participant {
     
     var money: Int;
-    var wager: Int;
     
     override init() {
         
         self.money = 0;
-        self.wager = 0;
         super.init();
     }
     
@@ -24,5 +22,10 @@ public class Player: Participant {
         self.money =  max(amount, 0);
     }
     
-    
+    public func makeWager(amount: Int) -> Int {
+        
+        let subtractAmount = amount <= self.money ? amount : 0;
+        self.money -= subtractAmount;
+        return subtractAmount;
+    }
 }
